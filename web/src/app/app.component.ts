@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loginSuccess } from './store/auth.actions';
+import { loginSuccess } from '../../../api/src/app/store/auth.actions';
 
 
 @Component({
@@ -20,7 +20,7 @@ import { loginSuccess } from './store/auth.actions';
         localStorage.removeItem('auth');
         return;
       }
-      this.store.dispatch(loginSuccess({ token }));
+      this.store.dispatch(loginSuccess({ token, user: null }));
     }
   }
   
