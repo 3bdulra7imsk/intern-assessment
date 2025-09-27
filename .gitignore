@@ -44,3 +44,10 @@ Thumbs.db
 .github/instructions/nx.instructions.md
 
 .angular
+
+# Local environment files
+.env
+.env.*
+.local
+.firebase
+.firestore
