@@ -10,6 +10,12 @@ export class Item {
 
   @Prop()
   description: string;
+
+  @Prop({ required: true })
+  owner: string; // User email who owns this item
+
+  @Prop({ default: false })
+  completed: boolean; // For todo-like functionality
 }
 
 export const ItemSchema = SchemaFactory.createForClass(Item);

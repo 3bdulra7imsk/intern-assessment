@@ -10,13 +10,13 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean {
     const raw = localStorage.getItem('auth');
     if (!raw) {
-      this.router.navigate(['/']); // redirect to login
+      this.router.navigate(['/login']); // redirect to login
       return false;
     }
     const { token, expiry } = JSON.parse(raw);
     if (!token || Date.now() > expiry) {
       localStorage.removeItem('auth');
-      this.router.navigate(['/']); // redirect to login
+      this.router.navigate(['/login']); // redirect to login
       return false;
     }
     return true;

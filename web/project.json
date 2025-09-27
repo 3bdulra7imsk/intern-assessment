@@ -2,7 +2,6 @@
   "name": "web",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
   "sourceRoot": "web/src",
   "tags": [],
   "targets": {
@@ -23,10 +22,22 @@
             "input": "web/public"
           }
         ],
-        "styles": ["web/src/styles.scss"]
+        "styles": ["web/src/styles.scss"],
+        "fileReplacements": [
+          {
+            "replace": "web/src/environments/environment.ts",
+            "with": "web/src/environments/environment.ts"
+          }
+        ]
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "web/src/environments/environment.ts",
+              "with": "web/src/environments/environment.prod.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",
@@ -42,6 +53,12 @@
           "outputHashing": "all"
         },
         "development": {
+          "fileReplacements": [
+            {
+              "replace": "web/src/environments/environment.ts",
+              "with": "web/src/environments/environment.ts"
+            }
+          ],
           "buildOptimizer": false,
           "optimization": false,
           "vendorChunk": true,

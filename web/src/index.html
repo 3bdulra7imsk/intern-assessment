@@ -2,10 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>web</title>
+    <title>Intern Assessment</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    
+    <!-- Runtime Configuration -->
+    <script>
+      // This script allows runtime configuration of the API URL
+      // It can be modified during deployment without rebuilding the app
+      window.API_URL = window.API_URL || 'http://localhost:3000';
+      
+      // For production deployments, update this to your actual API URL:
+      // window.API_URL = 'https://your-api-domain.com';
+    </script>
   </head>
   <body>
     <app-root></app-root>
