@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, RouterOutlet],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.scss']
+  styleUrls: ['./app.scss'],
 })
 export class AppComponent implements OnInit {
   private router = inject(Router);
@@ -25,4 +25,3 @@ export class AppComponent implements OnInit {
     console.log('User is authenticated with token:', token);
   }
 }
-
